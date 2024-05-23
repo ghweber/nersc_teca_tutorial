@@ -1,8 +1,10 @@
 #!/bin/bash
 
+# Create result directory that will contain links
 LINK_DIR=era5_links/
 mkdir -p ${LINK_DIR}
 
+# Location of files to link
 ERA5_BASE="/global/cfs/cdirs/m3522/cmip6/ERA5"
 
 # set the variables to analyze
@@ -17,21 +19,27 @@ set -e
 for var in $VARIABLES3D
 do
     echo $var
-    ln -s ${ERA5_BASE}/e5.oper.an.pl/*/*${var}*.nc ${LINK_DIR}
+    for subdir in ${ERA5_BASE}/e5.oper.an.pl/*; do
+        ln -s $subdir/*${var}*.nc ${LINK_DIR}
+    done
 done
 
 # surface variables
 for var in $VARIABLEESFC
 do
     echo $var
-    ln -s ${ERA5_BASE}/e5.oper.an.sfc/*/*${var}*.nc ${LINK_DIR}
+    for subdir in ${ERA5_BASE}/e5.oper.an.sfc; do
+        ln -s $subdir/*${var}*.nc ${LINK_DIR}
+    done
 done
 
 # vertically-integrated variables
 for var in $VARIABLESVINTEG
 do
     echo $var
-    ln -s ${ERA5_BASE}/e5.oper.an.vinteg/*/*${var}*.nc ${LINK_DIR}/
+    for subdir in ${ERA5_BASE}/e5.oper.an.vinteg/*; do
+        ln -s $subdir/*${var}*.nc ${LINK_DIR}/
+    done
 done
 
 # write the link directory name to the terminal for checking in the MCF file
