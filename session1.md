@@ -392,7 +392,10 @@ These lines indicate the status of the TECA process. The message specifies that 
 
 ##### Time Information
 ```plaintext
-A total of 471888 steps available. Using the gregorian calendar. Times are specified in units of hours since 1900-01-01 00:00:00. The available times range from 1970-1-1 0:0:0 (613608) to 2023-10-31 22:59:60 (1.0855e+06). The available data contains: 54 years; 214 seasons; 646 months; 19662 days;
+A total of 471888 steps available. Using the gregorian calendar. Times are
+specified in units of hours since 1900-01-01 00:00:00. The available times
+range from 1970-1-1 0:0:0 (613608) to 2023-10-31 22:59:60 (1.0855e+06). The
+available data contains: 54 years; 214 seasons; 646 months; 19662 days;
 ```
 This section provides information about the temporal coverage of the dataset:
 
